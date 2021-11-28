@@ -1,0 +1,27 @@
+== Templates ==
+* list|list=UserRoles_List_List|user=UserRoles_List_User
+* card|list=UserRoles_Card_List|user=UserRoles_Card_User
+
+== Roles ==
+* Academic advisory board|users=|priority=300
+* Assistant editor|usergroups=assistanteditor|excludedbyroles=Associate editor,Senior editor,Editor-in-chief|priority=210
+* Associate editor|usergroups=associateeditor|excludedbyroles=Senior editor,Editor-in-chief|priority=220
+* CEO|users=Barrett.Larson|priority=790
+* Contributor|usergroups=contributor|excludedbyroles=Assistant editor,Associate editor,Senior editor,Editor-in-chief|priority=100
+* CTO|users=Chris.Rishel|priority=770
+* Director|roles=Director of community and partnerships,Director of marketing,Director of research,Director of residency engagement|priority=-1
+* Director of community and partnerships|users=Nkamdar|priority=500
+* Director of marketing|users=Oliviamsutton|priority=500
+* Director of research|users=Ed_Nguyen|priority=500
+* Director of residency engagement|users=Tony.Wang|priority=500
+* Editor-in-chief|users=Chris.Rishel|priority=950
+* Founder|users=Barrett.Larson,Chris.Rishel|priority=999
+* Senior editor|usergroups=senioreditor|excludedbyroles=Editor-in-chief|priority=230
+
+== Userinfo ==
+* Barrett.Larson|displayname=Barrett Larson, MD|imagefile=Barrett Larson Profile Picture.png
+* Chris.Rishel|displayname=Chris Rishel, MD, PhD|imagefile=Chris.Rishel.jpg
+* Ed_Nguyen|displayname=Ed Nguyen, MD|imagefile=
+* Nkamdar|displayname=Nirav Kamdar, MD, MPP, MBA|imagefile=NVK_Headshot_B&W.png
+* Oliviamsutton|displayname=Olivia Sutton, MD|imagefile=OMSprofpic.jpeg
+* Tony.Wang|displayname=Tony Wang, MD|imagefile=Tony_Wang_headshot.jpg

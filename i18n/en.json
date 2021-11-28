@@ -1,0 +1,10 @@
+{
+  "@metadata": {
+    "authors": [
+      "Chris Rishel"
+    ]
+  },
+  "userroles": "User Roles",
+  "userroles-extensionname": "UserRoles",
+  "userroles-desc": "Adds the ability to assign users to roles, which function similarly to usergroups but with no permissions functionality. Primarily intended to be used for cosmetic purposes."
+}

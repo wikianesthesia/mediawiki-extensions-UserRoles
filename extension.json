@@ -1,0 +1,58 @@
+{
+  "name": "UserRoles",
+  "namemsg": "userroles-extensionname",
+  "version": "0.1.0",
+  "author": [
+    "Chris Rishel"
+  ],
+  "license-name": "GPL-3.0-or-later",
+  "url": "https://www.mediawiki.org/wiki/Extension:UserRoles",
+  "descriptionmsg": "userroles-desc",
+  "type": "other",
+  "requires": {
+    "MediaWiki": ">= 1.35.0",
+    "extensions": {}
+  },
+  "callback": "MediaWiki\\Extension\\UserRoles\\UserRoles::initialize",
+  "config_prefix": "wg",
+  "config": {
+    "UserRolesDefaultTemplate": {
+      "value": "card"
+    },
+    "UserRolesUseRealName": {
+      "value": false
+    }
+  },
+  "AutoloadNamespaces": {
+    "MediaWiki\\Extension\\UserRoles\\": "src/"
+  },
+  "Hooks": {
+    "ParserFirstCallInit": "main"
+  },
+  "HookHandlers": {
+    "main": {
+      "class": "MediaWiki\\Extension\\UserRoles\\Hook\\HookHandler"
+    }
+  },
+  "MessagesDirs": {
+    "UserRoles": [
+      "i18n"
+    ]
+  },
+  "ResourceModules": {
+    "ext.userRoles.common": {
+      "scripts": [
+        "userRoles.common/userRoles.common.js"
+      ],
+      "styles": [
+        "userRoles.common/userRoles.common.less"
+      ],
+      "messages": []
+    }
+  },
+  "ResourceFileModulePaths": {
+    "localBasePath": "modules",
+    "remoteExtPath": "UserRoles/modules"
+  },
+  "manifest_version": 2
+}

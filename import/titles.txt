@@ -1,0 +1,6 @@
+MediaWiki:Userroles-definition
+Template:UserRoles_Card_List
+Template:UserRoles_Card_User
+Template:UserRoles_List_List
+Template:UserRoles_List_User
+Template:UserRoles_Plain_User

@@ -1,0 +1,243 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.11/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.11/ http://www.mediawiki.org/xml/export-0.11.xsd" version="0.11" xml:lang="en">
+  <siteinfo>
+    <generator>MediaWiki 1.35.0</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2" case="first-letter">Media</namespace>
+      <namespace key="-1" case="first-letter">Special</namespace>
+      <namespace key="0" case="first-letter" />
+      <namespace key="1" case="first-letter">Talk</namespace>
+      <namespace key="2" case="first-letter">User</namespace>
+      <namespace key="3" case="first-letter">User talk</namespace>
+      <namespace key="4" case="first-letter">WikiAnesthesia</namespace>
+      <namespace key="5" case="first-letter">WikiAnesthesia talk</namespace>
+      <namespace key="6" case="first-letter">File</namespace>
+      <namespace key="7" case="first-letter">File talk</namespace>
+      <namespace key="8" case="first-letter">MediaWiki</namespace>
+      <namespace key="9" case="first-letter">MediaWiki talk</namespace>
+      <namespace key="10" case="first-letter">Template</namespace>
+      <namespace key="11" case="first-letter">Template talk</namespace>
+      <namespace key="12" case="first-letter">Help</namespace>
+      <namespace key="13" case="first-letter">Help talk</namespace>
+      <namespace key="14" case="first-letter">Category</namespace>
+      <namespace key="15" case="first-letter">Category talk</namespace>
+      <namespace key="828" case="first-letter">Module</namespace>
+      <namespace key="829" case="first-letter">Module talk</namespace>
+      <namespace key="2300" case="first-letter">Gadget</namespace>
+      <namespace key="2301" case="first-letter">Gadget talk</namespace>
+      <namespace key="2302" case="case-sensitive">Gadget definition</namespace>
+      <namespace key="2303" case="case-sensitive">Gadget definition talk</namespace>
+      <namespace key="2600" case="first-letter">Topic</namespace>
+      <namespace key="7740" case="first-letter">PracticeGroup</namespace>
+      <namespace key="7741" case="first-letter">PracticeGroup talk</namespace>
+      <namespace key="8378" case="first-letter">PageTemplate</namespace>
+      <namespace key="8379" case="first-letter">PageTemplate talk</namespace>
+      <namespace key="8760" case="first-letter">UserNotes</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>MediaWiki:Userroles-definition</title>
+    <ns>8</ns>
+    <revision>
+      <timestamp>2021-11-27T10:38:53Z</timestamp>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve">== Templates ==
+* list|list=UserRoles_List_List|user=UserRoles_List_User
+* card|list=UserRoles_Card_List|user=UserRoles_Card_User</text>
+    </revision>
+  </page>
+  <page>
+    <title>Template:UserRoles Card List</title>
+    <ns>10</ns>
+    <revision>
+      <timestamp>2021-11-26T23:28:51Z</timestamp>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve">&lt;templatestyles src="UserRoles_Card_List/styles.css" /&gt;
+&lt;div class="card-deck userroles-card-deck"&gt;
+	{{{users}}}
+&lt;/div&gt;
+&lt;noinclude&gt;
+&lt;templatedata&gt;
+{
+	"params": {
+		"users": {
+			"label": "Users",
+			"description": "The formatted list of users",
+			"type": "content",
+			"suggested": true
+		}
+	},
+	"description": "This template is used to show a list of users",
+	"format": "block",
+	"paramOrder": [
+		"users"
+	]
+}
+&lt;/templatedata&gt;
+&lt;/noinclude&gt;</text>
+    </revision>
+  </page>
+  <page>
+    <title>Template:UserRoles Card User</title>
+    <ns>10</ns>
+    <revision>
+      <timestamp>2021-11-26T23:28:44Z</timestamp>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve">&lt;templatestyles src="UserRoles_Card_User/styles.css" /&gt;
+&lt;div class="card userroles-card"&gt;
+  {{#if:{{{image_file|}}}|&lt;div class="card-img-top" alt=""&gt;[[File:{{{image_file}}}]]&lt;/div&gt;}}
+  &lt;div class="card-body"&gt;
+    &lt;h5 class="card-title"&gt;[[User:{{{user_name}}}|{{{display_name}}}]]&lt;/h5&gt;
+    {{#if:{{{roles|}}}|&lt;h6 class="card-subtitle mb-2 text-muted"&gt;{{{roles}}}&lt;/h6&gt;}}
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;noinclude&gt;
+&lt;templatedata&gt;
+{
+	"params": {
+		"user_name": {
+			"label": "User name",
+			"description": "The user name for the user",
+			"type": "content",
+			"required": true
+		},
+		"display_name": {
+			"label": "Display name",
+			"description": "The display name for the user",
+			"type": "content",
+			"suggested": true
+		},
+		"image_file": {
+			"label": "Image file name",
+			"description": "The file name of the image for the user",
+			"type": "wiki-file-name",
+			"suggested": true
+		},
+		"roles": {
+			"label": "Role(s)",
+			"description": "The role(s) of this user",
+			"type": "content",
+			"suggested": true
+		}
+	},
+	"description": "This widget is used to show a users name, image, and roles",
+	"format": "block",
+	"paramOrder": [
+		"user_name",
+		"display_name",
+		"image_file",
+		"roles"
+	]
+}
+&lt;/templatedata&gt;
+&lt;/noinclude&gt;</text>
+    </revision>
+  </page>
+  <page>
+    <title>Template:UserRoles List List</title>
+    <ns>10</ns>
+    <revision>
+      <timestamp>2021-11-26T09:46:44Z</timestamp>
+      <origin>4533</origin>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve">&lt;ul&gt;
+	{{{users}}}
+&lt;/ul&gt;
+&lt;noinclude&gt;
+&lt;templatedata&gt;
+{
+	"params": {
+		"users": {
+			"label": "Users",
+			"description": "The formatted list of users",
+			"type": "content",
+			"suggested": true
+		}
+	},
+	"description": "This template is used to show a list of users",
+	"format": "block",
+	"paramOrder": [
+		"users"
+	]
+}
+&lt;/templatedata&gt;
+&lt;/noinclude&gt;</text>
+    </revision>
+  </page>
+  <page>
+    <title>Template:UserRoles List User</title>
+    <ns>10</ns>
+    <revision>
+      <timestamp>2021-11-26T11:17:13Z</timestamp>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve">&lt;li&gt;[[User:{{{user_name}}}|{{{display_name}}}]]&lt;/li&gt;
+&lt;noinclude&gt;
+&lt;templatedata&gt;
+{
+	"params": {
+		"user_name": {
+			"label": "User name",
+			"description": "The user name",
+			"type": "content",
+			"required": true
+		},
+		"display_name": {
+			"label": "Display name",
+			"description": "The display name for the user",
+			"type": "content",
+			"suggested": true
+		}
+	},
+	"description": "This template is used to generate an item for use in a list of users",
+	"format": "block",
+	"paramOrder": [
+		"user_name",
+		"display_name"
+	]
+}
+&lt;/templatedata&gt;
+&lt;/noinclude&gt;</text>
+    </revision>
+  </page>
+  <page>
+    <title>Template:UserRoles Plain User</title>
+    <ns>10</ns>
+    <revision>
+      <timestamp>2021-11-26T22:08:01Z</timestamp>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve">[[User:{{{user_name}}}|{{{display_name}}}]]
+&lt;noinclude&gt;
+&lt;templatedata&gt;
+{
+	"params": {
+		"user_name": {
+			"label": "User name",
+			"description": "The user name for the user",
+			"type": "content",
+			"required": true
+		},
+		"display_name": {
+			"label": "Display name",
+			"description": "The display name for the user",
+			"type": "content",
+			"suggested": true
+		}
+	},
+	"description": "This widget is used to show a users name",
+	"format": "block",
+	"paramOrder": [
+		"user_name",
+		"display_name"
+	]
+}
+&lt;/templatedata&gt;
+&lt;/noinclude&gt;</text>
+    </revision>
+  </page>
+</mediawiki>
