@@ -8,36 +8,32 @@ use Title;
 use User;
 
 class UserRoles {
-    protected static $extensionLocalDirectory;
+
+    /**
+     * @var bool
+     */
+    protected static $definitionLoaded = false;
 
     /**
      * @var Role[]
      */
-    protected static $roles;
+    protected static $roles = [];
 
     /**
      * @var Template[]
      */
-    protected static $templates;
+    protected static $templates = [];
 
     /**
      * @var UserInfo[]
      */
-    protected static $userInfo;
+    protected static $userInfo = [];
 
     /**
      * @var Role[][]
      */
     protected static $userRoles = [];
 
-
-    public static function getExtensionLocalDirectory(): string {
-        if( !static::$extensionLocalDirectory ) {
-            static::$extensionLocalDirectory = realpath( __DIR__ . '/..' );
-        }
-
-        return static::$extensionLocalDirectory;
-    }
 
     /**
      * @param string $name
@@ -92,7 +88,11 @@ class UserRoles {
     public static function getUserInfo( int $userId ) {
         static::loadUserRolesDefinition();
 
-        return static::$userInfo[ $userId ] ?? false;
+        if( !isset( static::$userInfo[ $userId ] ) ) {
+            static::$userInfo[ $userId ] = new UserInfo( $userId );
+        }
+
+        return static::$userInfo[ $userId ];
     }
 
     /**
@@ -136,7 +136,7 @@ class UserRoles {
     }
 
     protected static function loadUserRolesDefinition() {
-        if( static::$roles === null ) {
+        if( !static::$definitionLoaded ) {
             static::$roles = [];
             static::$templates = [];
             static::$userInfo = [];
@@ -189,5 +189,7 @@ class UserRoles {
                 }
             }
         }
+
+        static::$definitionLoaded = true;
     }
 }

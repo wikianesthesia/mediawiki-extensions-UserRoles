@@ -12,26 +12,56 @@ class UserInfo {
     protected $displayName = '';
 
     /**
-     * @var int
-     */
-    protected $id = 0;
-
-    /**
      * @var string
      */
     protected $imageFile = '';
-
-    /**
-     * @var string
-     */
-    protected $userName = '';
 
     /**
      * @var User
      */
     protected $user;
 
-    public function __construct( string $definition = '' ) {
+    public function __construct( $userIdOrDefinition ) {
+        if( is_int( $userIdOrDefinition ) ) {
+            $this->user = User::newFromId( $userIdOrDefinition );
+        } else {
+            if( !$this->processDefinition( $userIdOrDefinition ) ) {
+                return false;
+            }
+        }
+    }
+
+    public function getDisplayName(): string {
+        global $wgUserRolesUseRealName;
+
+        if( !$this->displayName ) {
+            if( $wgUserRolesUseRealName && $this->getRealName() ) {
+                $this->displayName = $this->getRealName();
+            } else {
+                $this->displayName = $this->getUserName();
+            }
+        }
+
+        return $this->displayName;
+    }
+
+    public function getId(): int {
+        return $this->user->getId();
+    }
+
+    public function getImageFile(): string {
+        return $this->imageFile;
+    }
+
+    public function getRealName(): string {
+        return $this->user->getRealName();
+    }
+
+    public function getUserName(): string {
+        return $this->user->getName();
+    }
+
+    protected function processDefinition( $definition ) {
         // Much of this code is adapted from MediaWikiGadgetsDefinitionRepo::newFromDefinition()
         $m = [];
         if ( !preg_match(
@@ -42,14 +72,11 @@ class UserInfo {
             return false;
         }
 
-        $this->userName = trim( $m[ 1 ] );
-        $this->user = User::newFromName( $this->userName );
+        $this->user = User::newFromName( trim( $m[ 1 ] ) );
 
         if( !$this->user->isRegistered() ) {
             return false;
         }
-
-        $this->id = $this->user->getId();
 
         $options = trim( $m[ 2 ] );
 
@@ -70,35 +97,5 @@ class UserInfo {
                 }
             }
         }
-    }
-
-    public function getDisplayName(): string {
-        global $wgUserRolesUseRealName;
-
-        if( !$this->displayName ) {
-            if( $wgUserRolesUseRealName && $this->getRealName() ) {
-                $this->displayName = $this->getRealName();
-            } else {
-                $this->displayName = $this->getUserName();
-            }
-        }
-
-        return $this->displayName;
-    }
-
-    public function getId(): int {
-        return $this->id;
-    }
-
-    public function getImageFile(): string {
-        return $this->imageFile;
-    }
-
-    public function getRealName(): string {
-        return $this->user->getRealName();
-    }
-
-    public function getUserName(): string {
-        return $this->userName;
     }
 }

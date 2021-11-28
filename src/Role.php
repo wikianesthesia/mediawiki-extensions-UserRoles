@@ -206,11 +206,8 @@ class Role {
                     $bName = $wgUserRolesUseRealName ? $b->getRealName() : $b->getName();
 
                     if( $useDisplayName ) {
-                        $aUserInfo = UserRoles::getUserInfo( $a->getId() );
-                        $bUserInfo = UserRoles::getUserInfo( $b->getId() );
-
-                        $aName = $aUserInfo ? $aUserInfo->getDisplayName() : $aName;
-                        $bName = $bUserInfo ? $bUserInfo->getDisplayName() : $bName;
+                        $aName = UserRoles::getUserInfo( $a->getId() )->getDisplayName();
+                        $bName = UserRoles::getUserInfo( $b->getId() )->getDisplayName();
                     }
 
                     return $aName < $bName ? -1 : 1;

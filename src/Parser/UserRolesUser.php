@@ -34,7 +34,7 @@ class UserRolesUser {
 
         $templateParams = 'user_name=' . $user->getName();
 
-        if( $useDisplayName && $userInfo ) {
+        if( $useDisplayName ) {
             $displayName = $userInfo->getDisplayName();
         } elseif( $wgUserRolesUseRealName ) {
             $displayName = $user->getRealName();
@@ -44,7 +44,7 @@ class UserRolesUser {
 
         $templateParams .= '|display_name=' . $displayName;
 
-        if( $userInfo && $userInfo->getImageFile() ) {
+        if( $userInfo->getImageFile() ) {
             $templateParams .= '|image_file=' . $userInfo->getImageFile();
         }
 
