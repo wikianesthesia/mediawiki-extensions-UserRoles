@@ -2,10 +2,18 @@
 
 namespace MediaWiki\Extension\UserRoles\Hook;
 
+use MediaWiki\Extension\UserRoles\UserRoles;
+use MediaWiki\Hook\BeforePageDisplayHook;
 use MediaWiki\Hook\ParserFirstCallInitHook;
 use Parser;
 
-class HookHandler implements ParserFirstCallInitHook {
+class HookHandler implements
+    BeforePageDisplayHook,
+    ParserFirstCallInitHook {
+    public function onBeforePageDisplay( $out, $skin ): void {
+        UserRoles::loadUserRolesDefinition();
+    }
+
     /**
      * @param Parser $parser Parser object being initialised
      * @return bool|void True or no return value to continue or false to abort

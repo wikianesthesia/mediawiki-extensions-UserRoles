@@ -99,7 +99,7 @@ class UserRoles {
      * @param string $userGroup
      * @return User[]
      */
-    public static function getUsersForUserGroup( string $userGroup ) {
+    public static function getUsersForUserGroup( string $userGroup ): array {
         $users = [];
 
         $dbr = MediaWikiServices::getInstance()->getDBLoadBalancer()->getConnectionRef( DB_REPLICA );
@@ -127,15 +127,7 @@ class UserRoles {
         return $users;
     }
 
-    public static function initialize() {
-        global $wgHooks;
-
-        $wgHooks[ 'BeforePageDisplay' ][] = function() {
-            static::loadUserRolesDefinition();
-        };
-    }
-
-    protected static function loadUserRolesDefinition() {
+    public static function loadUserRolesDefinition() {
         if( !static::$definitionLoaded ) {
             static::$roles = [];
             static::$templates = [];

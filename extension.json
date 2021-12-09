@@ -13,7 +13,6 @@
     "MediaWiki": ">= 1.35.0",
     "extensions": {}
   },
-  "callback": "MediaWiki\\Extension\\UserRoles\\UserRoles::initialize",
   "config_prefix": "wg",
   "config": {
     "UserRolesDefaultTemplate": {
@@ -27,6 +26,7 @@
     "MediaWiki\\Extension\\UserRoles\\": "src/"
   },
   "Hooks": {
+    "BeforePageDisplay": "main",
     "ParserFirstCallInit": "main"
   },
   "HookHandlers": {
