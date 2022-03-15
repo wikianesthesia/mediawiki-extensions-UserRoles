@@ -9,8 +9,7 @@
 * CEO|users=Barrett.Larson|priority=790
 * Contributor|usergroups=contributor|excludedbyroles=Assistant editor,Associate editor,Senior editor,Editor-in-chief|priority=100
 * CTO|users=Chris.Rishel|priority=770
-* Director|roles=Director of community and partnerships,Director of marketing,Director of research,Director of residency engagement|priority=-1
-* Director of community and partnerships|users=Nkamdar|priority=500
+* Director|roles=Director of marketing,Director of research,Director of residency engagement|priority=-1
 * Director of marketing|users=Oliviamsutton|priority=500
 * Director of research|users=Ed_Nguyen|priority=500
 * Director of residency engagement|users=Tony.Wang|priority=500
